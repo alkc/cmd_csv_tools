@@ -8,9 +8,15 @@ def check_paths(csv_file, print_csv_path=False):
     """
     Check if file in read1 and read2 exists for each sample
     """
+
+    output_header = ["sample_id", "read", "read_filepath", "file_exists"]
+    if print_csv_path:
+        output_header = ["csv"] + output_header
+
     with open(csv_file, mode='r') as file:
         reader = csv.DictReader(file)
 
+        print("\t".join(output_header))
         for row in reader:
             id_ = row['id']
             read1_path = row['read1']
