@@ -19,14 +19,12 @@ def check_paths(csv_file, print_csv_path=False):
             read1_exists = os.path.exists(read1_path)
             read2_exists = os.path.exists(read2_path)
 
-
-
             if print_csv_path:
-                print(f"{csv_file}\t{id_}\t{read1_path}\t{read1_exists}")
-                print(f"{csv_file}\t{id_}\t{read2_path}\t{read2_exists}")
+                print(f"{csv_file}\t{id_}\tread1\t{read1_path}\t{read1_exists}")
+                print(f"{csv_file}\t{id_}\tread2\t{read2_path}\t{read2_exists}")
             else:
-                print(f"{id_}\t{read1_path}\t{read1_exists}")
-                print(f"{id_}\t{read2_path}\t{read2_exists}")
+                print(f"{id_}\t{read1_path}\tread1\t{read1_exists}")
+                print(f"{id_}\t{read2_path}\tread1\t{read2_exists}")
 
 if __name__ == "__main__":
     # Argument parsing
